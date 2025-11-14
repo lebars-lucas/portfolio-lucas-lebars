@@ -1,0 +1,818 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import Favicons from '../components/Favicons.astro';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-trottoir à Montbéliard - Lucas Gueudelot</title>
+    <meta name="description" content="Découvrez mon projet de reportage audiovisuel réalisé à Montbéliard">
+    <Favicons />
+</head>
+<body class="font-sans bg-white text-forest-dark">
+    <!-- Header -->
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/img-reportage-montbe.png" alt="Micro-trottoir à Montbéliard" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-br from-forest-dark/90 via-forest-deep/85 to-forest-dark/80"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto flex-1 flex flex-col items-center justify-center">
+            <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 text-white bg-white/20 backdrop-blur-sm border border-white/30">
+                Projet scolaire - Audiovisuel
+            </span>
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
+                Micro-trottoir à Montbéliard
+            </h1>
+            <p class="text-lg md:text-xl text-cream/90 max-w-3xl mx-auto drop-shadow-lg">
+                Un reportage audiovisuel immersif au cœur de la ville
+            </p>
+        </div>
+        
+        <div class="relative z-10 pb-8 animate-bounce">
+            <svg class="w-8 h-8 mx-auto text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-20 bg-gradient-to-b from-white to-forest-main/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-12 h-12 rounded-full bg-forest-main/10 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-forest-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-dark mb-2">Durée</h3>
+                    <p class="text-sm text-mountain">3 semaines</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-12 h-12 rounded-full bg-moss/10 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-dark mb-2">Équipe</h3>
+                    <p class="text-sm text-mountain">3 personnes</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg">
+                    <div class="w-12 h-12 rounded-full bg-sage/10 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-dark mb-2">Outils</h3>
+                    <p class="text-sm text-mountain">DaVinci Resolve</p>
+                </div>
+            </div>
+
+            <!-- Introduction -->
+            <div class="prose prose-lg max-w-none">
+                <p class="text-lg text-mountain leading-relaxed text-center mb-12">
+                    Cette section présente en détail mon projet de micro-trottoir réalisé à Montbéliard. 
+                    Ce reportage audiovisuel illustre ma maîtrise de la chaîne de production complète, 
+                    depuis l'idée jusqu'à la post-production. J'ai développé de nombreuses 
+                    compétences techniques en captation, montage et création sonore, tout en développant 
+                    une approche humaine de l'exploration du sujet traité, avec une attention particulière 
+                    portée à la dimension relationnelle et l'impact émotionnel recherché.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Contexte et objectifs -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 text-forest-main bg-forest-main/10">
+                        1. Contexte et objectifs
+                    </div>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Une exploration humaine et technique
+                    </h2>
+                    <p class="text-mountain leading-relaxed mb-6">
+                        Le projet de micro-trottoir à Montbéliard portait sur l'impact de l'intelligence artificielle sur 
+                        l'emploi. Ce reportage visait à recueillir les témoignages des habitants, explorer les craintes et 
+                        espoirs liés à cette technologie émergente.
+                    </p>
+                    <p class="text-mountain leading-relaxed mb-6">
+                        L'objectif était de produire une vidéo pédagogique qui offre un éventail de points de vue, 
+                        cadre, réalise un débat et sensibilise au sujet traité sans exprimer une opinion subjective.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Interview</span>
+                        <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Reportage</span>
+                        <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Storytelling</span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Images interviews -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+                            <img src="/projetmicrotrottoirimgsection1.jpg" alt="Interview 1" class="w-full h-full object-cover" loading="lazy" />
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+                            <img src="/projetmicrotrottoirimgsection2.jpg" alt="Interview 2" class="w-full h-full object-cover" loading="lazy" />
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+                            <img src="/projetmicrotrottoirimgsection3.jpg" alt="Interview 3" class="w-full h-full object-cover" loading="lazy" />
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
+                            <img src="/projetmicrotrottoirimgsection4.jpg" alt="Interview 4" class="w-full h-full object-cover" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Mon rôle et responsabilités -->
+    <section class="py-20 bg-gradient-to-b from-forest-main/5 to-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <!-- Image chef de projet -->
+                    <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="/rolepagemicrotrottoir.png" alt="Chef de projet en action" class="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 text-moss bg-moss/10">
+                        2. Mon rôle et responsabilités
+                    </div>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Chef de projet et réalisateur
+                    </h2>
+                    <p class="text-mountain leading-relaxed mb-6">
+                        En tant que cadreur et chef de projet vidéo, j'ai assumé différents rôles : organisation des 
+                        sessions de micro-trottoir, planification du tournage, gestion des lieux et sélection du matériel 
+                        adapté pour chaque séquence.
+                    </p>
+                    <p class="text-mountain leading-relaxed mb-6">
+                        Durant le tournage, j'ai pris en charge le cadrage et la captation vidéo. Les différentes étapes 
+                        de post-production (montage, étalonnage, sous-titrage, mixage audio) ont été réparties entre les 
+                        membres de l'équipe, chacun apportant ses compétences spécifiques au projet.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-forest-main mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-sm text-mountain">Gestion de projet</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-forest-main mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-sm text-mountain">Cadrage vidéo</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-forest-main mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-sm text-mountain">Montage & étalonnage</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-forest-main mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-sm text-mountain">Post-production</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Défis et contraintes -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 text-sage bg-sage/10">
+                    3. Défis et contraintes
+                </div>
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                    Surmonter les obstacles techniques et humains
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-forest-main/5 to-moss/5 rounded-2xl p-8 border border-forest-main/10">
+                    <div class="w-12 h-12 rounded-full bg-forest-main/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-forest-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-dark mb-3">Convaincre les passants</h3>
+                    <p class="text-sm text-mountain leading-relaxed">
+                        Difficulté à convaincre les gens de participer. Nous avons sollicité un grand nombre de personnes 
+                        pour recueillir suffisamment de témoignages.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-moss/5 to-sage/5 rounded-2xl p-8 border border-moss/10">
+                    <div class="w-12 h-12 rounded-full bg-moss/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-dark mb-3">Gestion technique</h3>
+                    <p class="text-sm text-mountain leading-relaxed">
+                        Malgré nos efforts, certaines contraintes techniques ont freiné le projet : retour en images, 
+                        inclinaison correcte, qualité de la prise de vue et de l'audio.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-sage/5 to-mint/5 rounded-2xl p-8 border border-sage/10">
+                    <div class="w-12 h-12 rounded-full bg-sage/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-forest-dark mb-3">Contraintes temporelles</h3>
+                    <p class="text-sm text-mountain leading-relaxed">
+                        Techniques pour atteindre une meilleure authenticité et spontanéité : cadre ouvert, plan d'ensemble 
+                        et durée de l'interview.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Processus détaillé -->
+    <section class="py-20 bg-gradient-to-b from-forest-main/5 to-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <div class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 text-mint bg-mint/20">
+                        4. Processus détaillé
+                    </div>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        De la préparation à la diffusion
+                    </h2>
+                    <p class="text-mountain leading-relaxed mb-6">
+                        Le processus de réalisation s'est structuré en quatres étapes clés. Tout d'abord, nous avons défini 
+                        un thème : "L'impact de l'IA sur l'emploi" et élaboré un questionnaire avec des questions ouvertes 
+                        pour favoriser des réponses spontanées.
+                    </p>
+                    <p class="text-mountain leading-relaxed mb-6">
+                        Le jour du tournage, j'ai pris en charge la captation (installation du matériel, cadrage, interviews). 
+                        L'équipe s'est ensuite répartie les tâches de post-production : montage avec DaVinci Resolve, 
+                        choix des séquences, création de transitions et étalonnage.
+                    </p>
+                </div>
+                <div class="relative">
+                    <!-- Placeholder pour icône micro -->
+                    <div class="aspect-square bg-gradient-to-br from-forest-dark to-moss rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center">
+                        <svg class="w-32 h-32 text-white/20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="space-y-8">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-forest-main text-white flex items-center justify-center font-bold">1</div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="font-bold text-forest-dark mb-2">Préparation et recherche</h3>
+                        <p class="text-sm text-mountain">Définition du thème, élaboration du questionnaire, repérage des lieux</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-moss text-white flex items-center justify-center font-bold">2</div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="font-bold text-forest-dark mb-2">Captation terrain</h3>
+                        <p class="text-sm text-mountain">Installation matériel, interviews des passants, gestion technique</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-sage text-white flex items-center justify-center font-bold">3</div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="font-bold text-forest-dark mb-2">Montage et étalonnage</h3>
+                        <p class="text-sm text-mountain">Sélection des séquences, montage sur DaVinci Resolve, étalonnage couleur</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-mint text-forest-dark flex items-center justify-center font-bold">4</div>
+                    <div class="flex-1 pt-2">
+                        <h3 class="font-bold text-forest-dark mb-2">Finalisation et export</h3>
+                        <p class="text-sm text-mountain">Mixage audio, export HD, validation finale</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Résultats -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-4 text-forest-main bg-forest-main/10">
+                    5. Résultats
+                </div>
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                    Un projet réussi et enrichissant
+                </h2>
+            </div>
+
+            <!-- Vidéos finales -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Version Française -->
+                <div class="relative group">
+                    <div class="bg-forest-dark/5 rounded-2xl p-4 border border-forest-main/10">
+                        <div class="mb-3 flex items-center justify-between">
+                            <h3 class="font-bold text-forest-dark flex items-center gap-2">
+                                <svg class="w-5 h-5 text-forest-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                                </svg>
+                                Version Française
+                            </h3>
+                        </div>
+                        <div class="custom-video-player" data-video-id="video-fr">
+                            <div class="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative">
+                                <video id="video-fr" class="w-full h-full" preload="metadata">
+                                    <source src="/EL_LL_MJ_DAI_Fr.mp4" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture de vidéos.
+                                </video>
+                                
+                                <!-- Controls overlay -->
+                                <div class="video-controls">
+                                    <!-- Play/Pause button overlay -->
+                                    <button class="play-overlay" aria-label="Play">
+                                        <svg class="w-20 h-20 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                                        </svg>
+                                    </button>
+                                    
+                                    <!-- Bottom controls bar -->
+                                    <div class="controls-bar">
+                                        <!-- Progress bar -->
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <div class="progress-filled"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Controls buttons -->
+                                        <div class="controls-buttons">
+                                            <div class="flex items-center gap-3">
+                                                <!-- Play/Pause -->
+                                                <button class="control-btn play-btn" aria-label="Play/Pause">
+                                                    <svg class="play-icon w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                                                    </svg>
+                                                    <svg class="pause-icon w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                </button>
+                                                
+                                                <!-- Time -->
+                                                <span class="time-display text-sm text-white font-medium">0:00 / 0:00</span>
+                                            </div>
+                                            
+                                            <div class="flex items-center gap-3">
+                                                <!-- Speed -->
+                                                <button class="control-btn speed-btn" aria-label="Vitesse de lecture">
+                                                    <span class="text-sm font-medium">1x</span>
+                                                </button>
+                                                
+                                                <!-- Download -->
+                                                <a href="/EL_LL_MJ_DAI_Fr.mp4" download="Micro-trottoir-Montbeliard-FR.mp4" class="control-btn" aria-label="Télécharger">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                                    </svg>
+                                                </a>
+                                                
+                                                <!-- Fullscreen -->
+                                                <button class="control-btn fullscreen-btn" aria-label="Plein écran">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Anglaise -->
+                <div class="relative group">
+                    <div class="bg-forest-dark/5 rounded-2xl p-4 border border-moss/10">
+                        <div class="mb-3 flex items-center justify-between">
+                            <h3 class="font-bold text-forest-dark flex items-center gap-2">
+                                <svg class="w-5 h-5 text-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                                </svg>
+                                Version Anglaise
+                            </h3>
+                        </div>
+                        <div class="custom-video-player" data-video-id="video-en">
+                            <div class="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative">
+                                <video id="video-en" class="w-full h-full" preload="metadata">
+                                    <source src="/EL_LL_MJ_DAI_En.mp4" type="video/mp4">
+                                    Votre navigateur ne supporte pas la lecture de vidéos.
+                                </video>
+                                
+                                <!-- Controls overlay -->
+                                <div class="video-controls">
+                                    <!-- Play/Pause button overlay -->
+                                    <button class="play-overlay" aria-label="Play">
+                                        <svg class="w-20 h-20 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                                        </svg>
+                                    </button>
+                                    
+                                    <!-- Bottom controls bar -->
+                                    <div class="controls-bar">
+                                        <!-- Progress bar -->
+                                        <div class="progress-container">
+                                            <div class="progress-bar">
+                                                <div class="progress-filled"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Controls buttons -->
+                                        <div class="controls-buttons">
+                                            <div class="flex items-center gap-3">
+                                                <!-- Play/Pause -->
+                                                <button class="control-btn play-btn" aria-label="Play/Pause">
+                                                    <svg class="play-icon w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                                                    </svg>
+                                                    <svg class="pause-icon w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                </button>
+                                                
+                                                <!-- Time -->
+                                                <span class="time-display text-sm text-white font-medium">0:00 / 0:00</span>
+                                            </div>
+                                            
+                                            <div class="flex items-center gap-3">
+                                                <!-- Speed -->
+                                                <button class="control-btn speed-btn" aria-label="Vitesse de lecture">
+                                                    <span class="text-sm font-medium">1x</span>
+                                                </button>
+                                                
+                                                <!-- Download -->
+                                                <a href="/EL_LL_MJ_DAI_En.mp4" download="Micro-trottoir-Montbeliard-EN.mp4" class="control-btn" aria-label="Télécharger">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                                    </svg>
+                                                </a>
+                                                
+                                                <!-- Fullscreen -->
+                                                <button class="control-btn fullscreen-btn" aria-label="Plein écran">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-forest-main/5 to-transparent p-8 rounded-2xl border-l-4 border-forest-main">
+                    <h3 class="font-bold text-forest-dark mb-4 flex items-center gap-3">
+                        <svg class="w-6 h-6 text-forest-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Compétences développées
+                    </h3>
+                    <ul class="space-y-2 text-sm text-mountain">
+                        <li>• Techniques de cadrage et prise de son</li>
+                        <li>• Gestion de projet audiovisuel</li>
+                        <li>• Organisation et planification terrain</li>
+                        <li>• Communication et approche relationnelle</li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-br from-moss/5 to-transparent p-8 rounded-2xl border-l-4 border-moss">
+                    <h3 class="font-bold text-forest-dark mb-4 flex items-center gap-3">
+                        <svg class="w-6 h-6 text-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        Points forts du projet
+                    </h3>
+                    <ul class="space-y-2 text-sm text-mountain">
+                        <li>• Diversité des témoignages recueillis</li>
+                        <li>• Qualité technique du rendu final</li>
+                        <li>• Cohérence narrative et rythmique</li>
+                        <li>• Accessibilité internationale (doublage anglais)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-b from-forest-dark to-forest-deep text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">
+                Découvrez mes autres projets
+            </h2>
+            <p class="text-lg text-cream/90 mb-8">
+                Explorez mon portfolio complet et découvrez mes autres réalisations créatives
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="/projets" class="px-8 py-4 rounded-xl text-sm font-semibold bg-white text-forest-dark hover:bg-cream transition-all hover:scale-105 shadow-lg">
+                    Voir tous les projets
+                </a>
+                <a href="/contact" class="px-8 py-4 rounded-xl text-sm font-semibold border-2 border-white text-white hover:bg-white/10 transition-all">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <Footer />
+
+    <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offset = 80;
+                const targetPosition = target.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                (entry.target as HTMLElement).style.opacity = '1';
+                (entry.target as HTMLElement).style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        (section as HTMLElement).style.opacity = '0';
+        (section as HTMLElement).style.transform = 'translateY(20px)';
+        (section as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+    });
+
+    // Custom Video Player
+    document.querySelectorAll('.custom-video-player').forEach((playerContainer) => {
+        const videoId = playerContainer.getAttribute('data-video-id');
+        const video = document.getElementById(videoId) as HTMLVideoElement;
+        const controls = playerContainer.querySelector('.video-controls') as HTMLElement;
+        const playOverlay = playerContainer.querySelector('.play-overlay') as HTMLButtonElement;
+        const playBtn = playerContainer.querySelector('.play-btn') as HTMLButtonElement;
+        const playIcon = playerContainer.querySelector('.play-icon') as HTMLElement;
+        const pauseIcon = playerContainer.querySelector('.pause-icon') as HTMLElement;
+        const timeDisplay = playerContainer.querySelector('.time-display') as HTMLElement;
+        const progressBar = playerContainer.querySelector('.progress-bar') as HTMLElement;
+        const progressFilled = playerContainer.querySelector('.progress-filled') as HTMLElement;
+        const speedBtn = playerContainer.querySelector('.speed-btn') as HTMLButtonElement;
+        const fullscreenBtn = playerContainer.querySelector('.fullscreen-btn') as HTMLButtonElement;
+
+        let hideControlsTimeout: number;
+        const speeds = [1, 1.25, 1.5, 2];
+        let currentSpeedIndex = 0;
+
+        // Format time
+        function formatTime(seconds: number): string {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Toggle play/pause
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                playOverlay.style.opacity = '0';
+                playOverlay.style.pointerEvents = 'none';
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                video.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const percent = (video.currentTime / video.duration) * 100;
+            progressFilled.style.width = `${percent}%`;
+            timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+        }
+
+        // Update speed
+        function updateSpeed() {
+            currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+            video.playbackRate = speeds[currentSpeedIndex];
+            speedBtn.querySelector('span')!.textContent = `${speeds[currentSpeedIndex]}x`;
+        }
+
+        // Seek video
+        function seek(e: MouseEvent) {
+            const rect = progressBar.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        }
+
+        // Toggle fullscreen
+        function toggleFullscreen() {
+            const container = playerContainer.querySelector('.aspect-video') as HTMLElement;
+            if (!document.fullscreenElement) {
+                container.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Show/hide controls
+        function showControls() {
+            controls.classList.add('show');
+            clearTimeout(hideControlsTimeout);
+            if (!video.paused) {
+                hideControlsTimeout = window.setTimeout(() => {
+                    controls.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        // Event listeners
+        playOverlay.addEventListener('click', togglePlay);
+        playBtn.addEventListener('click', togglePlay);
+        video.addEventListener('click', togglePlay);
+        video.addEventListener('timeupdate', updateProgress);
+        video.addEventListener('loadedmetadata', updateProgress);
+        progressBar.addEventListener('click', seek);
+        speedBtn.addEventListener('click', updateSpeed);
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Mouse movement on video
+        playerContainer.addEventListener('mousemove', showControls);
+        playerContainer.addEventListener('mouseleave', () => {
+            if (!video.paused) {
+                controls.classList.remove('show');
+            }
+        });
+
+        // Show controls when paused
+        video.addEventListener('pause', () => {
+            controls.classList.add('show');
+            clearTimeout(hideControlsTimeout);
+        });
+
+        video.addEventListener('play', () => {
+            showControls();
+        });
+
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && e.target === document.body) {
+                e.preventDefault();
+                togglePlay();
+            }
+        });
+    });
+    </script>
+
+    <style>
+    /* Video Player Styles */
+    .video-controls {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        pointer-events: none;
+    }
+
+    .video-controls.show,
+    .custom-video-player:hover .video-controls {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .play-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(26, 82, 65, 0.9);
+        border-radius: 50%;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        pointer-events: auto;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .play-overlay:hover {
+        background: rgba(26, 82, 65, 1);
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 30px rgba(26, 82, 65, 0.5);
+    }
+
+    .controls-bar {
+        padding: 1rem;
+        pointer-events: auto;
+    }
+
+    .progress-container {
+        margin-bottom: 0.75rem;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .progress-bar:hover {
+        height: 8px;
+    }
+
+    .progress-filled {
+        height: 100%;
+        background: linear-gradient(90deg, #1a5241 0%, #4a9b7f 100%);
+        width: 0%;
+        transition: width 0.1s linear;
+        border-radius: 3px;
+    }
+
+    .controls-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .control-btn {
+        background: rgba(26, 82, 65, 0.8);
+        border: none;
+        color: white;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .control-btn:hover {
+        background: rgba(26, 82, 65, 1);
+        transform: scale(1.05);
+    }
+
+    .control-btn:active {
+        transform: scale(0.95);
+    }
+
+    .time-display {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    </style>
+
+</body>
+</html>

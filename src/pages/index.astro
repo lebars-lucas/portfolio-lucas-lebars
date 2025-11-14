@@ -1,0 +1,479 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Favicons from '../components/Favicons.astro';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Lebars - Portfolio</title>
+    <meta name="description" content="Portfolio de Lucas Lebars - Designer graphique et développeur web spécialisé en création d'expériences digitales innovantes">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <Favicons />
+</head>
+<body>
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-forest-dark via-forest-dark to-forest-deep">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 animate-float bg-moss blur-3xl mix-blend-screen" aria-hidden="true"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 animate-float bg-sage blur-3xl mix-blend-screen [animation-delay:2s]" aria-hidden="true"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full opacity-10 animate-float bg-mint blur-3xl mix-blend-screen [animation-delay:4s]" aria-hidden="true"></div>
+        </div>
+
+        <!-- Mountain silhouette SVG -->
+        <div class="absolute bottom-0 left-0 right-0 opacity-30">
+            <svg viewBox="0 0 1200 300" class="w-full h-auto" preserveAspectRatio="none">
+                <path d="M0,300 L0,180 L200,80 L400,150 L600,60 L800,140 L1000,100 L1200,200 L1200,300 Z" fill="rgba(45, 90, 61, 0.4)"/>
+                <path d="M0,300 L0,220 L300,120 L500,180 L700,100 L900,160 L1200,240 L1200,300 Z" fill="rgba(74, 124, 89, 0.3)"/>
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="opacity-0 animate-fade-in-up [animation-delay:0.2s]">
+                <span class="inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 text-mint-light border border-mint/30 bg-mint/20">
+                    Designer & Développeur Web
+                </span>
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 opacity-0 animate-fade-in-up [animation-delay:0.4s]">
+                Lucas Lebars
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-mint-light opacity-0 animate-fade-in-up [animation-delay:0.6s]">
+                Créateur d'expériences digitales uniques, alliant design créatif et développement technique pour donner vie à vos projets
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in-up [animation-delay:0.8s]">
+                <a href="#projects" class="px-8 py-4 rounded-full text-lg font-semibold text-white bg-moss transition-all hover:shadow-2xl hover:scale-105">
+                    Découvrir mes projets
+                </a>
+                <a href="/contact" class="px-8 py-4 rounded-full text-lg font-semibold text-white border-2 border-white transition-all hover:bg-white/10">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator centered at the bottom of hero -->
+        <div class="pointer-events-none absolute inset-x-0 bottom-6 z-20 flex justify-center animate-bounce">
+            <svg class="w-6 h-6 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-forest-dark">
+                        Qui suis-je ?
+                    </h2>
+                    <p class="text-lg mb-4 text-mountain">
+                        Étudiant en Multimédia et Internet à l'université Marie & Louis Pasteur à Montbéliard, je suis passionné par la création d'expériences digitales qui marquent les esprits.
+                    </p>
+                    <p class="text-lg mb-6 text-mountain">
+                        Mon approche combine une sensibilité artistique forte avec des compétences techniques solides, me permettant de transformer des concepts créatifs en réalités numériques fonctionnelles et esthétiques.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full text-sm font-medium text-forest-main bg-forest-main/10">Design UI/UX</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium text-forest-main bg-forest-main/10">Développement Web</span>
+                        <span class="px-4 py-2 rounded-full text-sm font-medium text-forest-main bg-forest-main/10">Créativité</span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-forest-main to-moss">
+                        <!-- Votre photo perso (remplissez le src) -->
+                        <img src="/photo-pro.jpg" alt="Photo de Lucas Lebars" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="w-full h-full flex items-center justify-center text-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4 text-forest-dark">
+                    Ma galerie
+                </h2>
+                <p class="text-lg text-mountain max-w-2xl mx-auto">
+                    La photographie est pour moi un moyen d'expression qui complète mon travail de designer. 
+                    À travers ces clichés, je capture des moments, des ambiances et des détails qui nourrissent 
+                    ma créativité et ma sensibilité visuelle.
+                </p>
+            </div>
+
+            <!-- Masonry Grid - Perfectly aligned mosaic -->
+            <div class="grid grid-cols-3 gap-4">
+                <!-- Row 1 -->
+                <div class="col-span-2 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[350px]">
+                    <img src="/img9.png" alt="Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Pairi Daiza / Belgique</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Juillet 2025</p>
+                    </div>
+                </div>
+                <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[350px]">
+                    <img src="/img6.png" alt="Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Pairi Daiza / Belgique</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Juillet 2025</p>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[280px]">
+                    <img src="/img8.png" alt="Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Eus / France</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Avril 2025</p>
+                    </div>
+                </div>
+                <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[280px]">
+                    <img src="/img7.png" alt="Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Parc de Sans-Souci / Allemagne</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Novembre 2022</p>
+                    </div>
+                </div>
+                <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[280px]">
+                    <img src="/img5.png" alt="Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Tokyo / Japon</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Avril 2023</p>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[320px]">
+                    <img src="/img4.png" alt="Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Tokyo / Japon</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Avril 2023</p>
+                    </div>
+                </div>
+                <div class="col-span-2 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[320px]">
+                    <img src="/img3.png" alt="Photo 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Nara / Japon</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Avril 2023</p>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="col-span-2 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[290px]">
+                    <img src="/img2.png" alt="Photo 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Tokyo / Japon</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Avril 2023</p>
+                    </div>
+                </div>
+                <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[290px]">
+                    <img src="/img1.png" alt="Photo 9" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-mint-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <p class="text-sm font-medium text-mint-light">Parc de Sans-Souci / Allemagne</p>
+                        </div>
+                        <p class="text-xs text-cream/80">Novembre 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-cream">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4 text-forest-dark">
+                    Mes compétences
+                </h2>
+                <p class="text-lg text-mountain">
+                    Une palette d'outils et technologies pour concrétiser vos idées
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Design -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 bg-forest-main/10">
+                        <svg class="w-8 h-8 text-forest-main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-forest-dark">Design</h3>
+                    <ul class="space-y-2 text-mountain">
+                        <li>• Adobe Illustrator</li>
+                        <li>• Figma</li>
+                        <li>• UI/UX Design</li>
+                        <li>• Identité visuelle</li>
+                    </ul>
+                </div>
+
+                <!-- Développement -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 bg-moss/10">
+                        <svg class="w-8 h-8 text-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-forest-dark">Développement</h3>
+                    <ul class="space-y-2 text-mountain">
+                        <li>• HTML/CSS/JavaScript</li>
+                        <li>• React & Astro</li>
+                        <li>• Responsive Design</li>
+                        <li>• Performance Web</li>
+                    </ul>
+                </div>
+
+                <!-- Multimédia -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 bg-sage/10">
+                        <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-forest-dark">Multimédia</h3>
+                    <ul class="space-y-2 text-mountain">
+                        <li>• Montage vidéo</li>
+                        <li>• DaVinci Resolve</li>
+                        <li>• Adobe Audition</li>
+                        <li>• Production sonore</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4 text-forest-dark">
+                    Projets récents
+                </h2>
+                <p class="text-lg text-mountain">
+                    Une sélection de mes réalisations les plus significatives
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Project 1 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-500 border-2 border-transparent hover:border-forest-main hover:shadow-[0_0_0_1px_rgba(45,90,61,0.1)]">
+                    <div class="grid md:grid-cols-2 gap-8 items-center p-8">
+                        <div class="order-2 md:order-1">
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 text-forest-main bg-forest-main/10">Projet scolaire</span>
+                            <h3 class="font-display text-3xl font-bold mb-4 text-forest-dark">Micro-trottoir à Montbéliard</h3>
+                            <p class="mb-4 text-mountain">
+                                Réalisation complète d'un reportage audiovisuel : cadrage, montage et étalonnage sur DaVinci Resolve.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Vidéo</span>
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Montage</span>
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">DaVinci Resolve</span>
+                            </div>
+                            <a href="/projet-micro-trottoir" class="inline-flex items-center gap-2 font-semibold text-forest-main hover:gap-4 transition-all">
+                                Voir le projet
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="order-1 md:order-2">
+                            <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-forest-main to-moss">
+                                <!-- Zone image (remplissez le src) -->
+                                <div class="absolute inset-0">
+                                    <img src="/img-reportage-montbe.png" alt="Micro-trottoir à Montbéliard" class="w-full h-full object-cover" loading="lazy" />
+                                </div>
+                                <!-- Placeholder conservé -->
+                                <div class="w-full h-full flex items-center justify-center text-white">
+                                    <svg class="w-16 h-16 opacity-30" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-500 border-2 border-transparent hover:border-forest-main hover:shadow-[0_0_0_1px_rgba(45,90,61,0.1)]">
+                    <div class="grid md:grid-cols-2 gap-8 items-center p-8">
+                        <div>
+                            <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-moss to-sage">
+                                <!-- Zone image (remplissez le src) -->
+                                <div class="absolute inset-0">
+                                    <img src="/img-souvenirsilence.png" alt="Les souvenirs en silence" class="w-full h-full object-cover" loading="lazy" />
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 text-forest-main bg-forest-main/10">Projet scolaire</span>
+                            <h3 class="font-display text-3xl font-bold mb-4 text-forest-dark">Les souvenirs en silence</h3>
+                            <p class="mb-4 text-mountain">
+                                Création sonore immersive avec bruitage et mixage sur Adobe Audition. Projet de narration audio créative.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Audio</span>
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Bruitage</span>
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Adobe Audition</span>
+                            </div>
+                            <a href="/projet-les-souvenirs-en-silence" class="inline-flex items-center gap-2 font-semibold text-forest-main hover:gap-4 transition-all">
+                                Voir le projet
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-500 border-2 border-transparent hover:border-forest-main hover:shadow-[0_0_0_1px_rgba(45,90,61,0.1)]">
+                    <div class="grid md:grid-cols-2 gap-8 items-center p-8">
+                        <div class="order-2 md:order-1">
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 text-forest-main bg-forest-main/10">Projet scolaire</span>
+                            <h3 class="font-display text-3xl font-bold mb-4 text-forest-dark">SAE 201/202</h3>
+                            <p class="mb-4 text-mountain">
+                                Projet de designer graphique : création d'identité visuelle avec Adobe Illustrator et Figma.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Design</span>
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Illustrator</span>
+                                <span class="px-3 py-1 rounded-full text-xs text-sage bg-sage/10">Figma</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 font-semibold text-forest-main hover:gap-4 transition-all">
+                                Voir le projet
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="order-1 md:order-2">
+                            <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-sage to-mint">
+                                <!-- Zone image (remplissez le src) -->
+                                <div class="absolute inset-0">
+                                    <img src="/img-sae201202.png" alt="SAE 201/202" class="w-full h-full object-cover" loading="lazy" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <Footer />
+
+    <script>
+    // Smooth scroll with offset for fixed nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offset = 80;
+                const targetPosition = target.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                (entry.target as HTMLElement).style.opacity = '1';
+                (entry.target as HTMLElement).style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section > div').forEach(el => {
+        observer.observe(el);
+    });
+</script>
