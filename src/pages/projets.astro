@@ -3,6 +3,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import Favicons from '../components/Favicons.astro';
+import PageLoader from '../components/PageLoader.astro';
+import LazyLoad from '../components/LazyLoad.astro';
 ---
 
 <!DOCTYPE html>
@@ -15,6 +17,8 @@ import Favicons from '../components/Favicons.astro';
     <Favicons />
 </head>
 <body class="font-sans bg-white text-forest-dark">
+    <PageLoader />
+    <LazyLoad />
     <!-- Header -->
     <Header />
 
@@ -124,7 +128,7 @@ import Favicons from '../components/Favicons.astro';
                         <div class="order-1 md:order-2">
                             <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-forest-main to-moss">
                                 <div class="absolute inset-0">
-                                    <img src="/img-reportage-montbe.png" alt="Micro-trottoir à Montbéliard" class="w-full h-full object-cover" loading="lazy" />
+                                    <img src="/img-reportage-montbe.png" alt="Micro-trottoir à Montbéliard" class="w-full h-full object-cover" />
                                 </div>
                             </div>
                         </div>
@@ -137,7 +141,7 @@ import Favicons from '../components/Favicons.astro';
                         <div>
                             <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-moss to-sage">
                                 <div class="absolute inset-0">
-                                    <img src="/img-souvenirsilence.png" alt="Les souvenirs en silence" class="w-full h-full object-cover" loading="lazy" />
+                                    <img src="/img-souvenirsilence.png" alt="Les souvenirs en silence" class="w-full h-full object-cover" />
                                 </div>
                             </div>
                         </div>
@@ -187,7 +191,7 @@ import Favicons from '../components/Favicons.astro';
                         <div class="order-1 md:order-2">
                             <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-sage to-mint">
                                 <div class="absolute inset-0">
-                                    <img src="/img-sae201202.png" alt="SAE 201/202" class="w-full h-full object-cover" loading="lazy" />
+                                    <img src="/img-sae201202.png" alt="SAE 201/202" class="w-full h-full object-cover" />
                                 </div>
                             </div>
                         </div>

@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import Favicons from '../components/Favicons.astro';
+import PageLoader from '../components/PageLoader.astro';
 ---
 
 <!DOCTYPE html>
@@ -15,6 +16,7 @@ import Favicons from '../components/Favicons.astro';
     <Favicons />
 </head>
 <body class="font-sans bg-white text-forest-dark">
+    <PageLoader />
     <!-- Header -->
     <Header />
 
@@ -121,16 +123,16 @@ import Favicons from '../components/Favicons.astro';
                     <!-- Images interviews -->
                     <div class="grid grid-cols-2 gap-4">
                         <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
-                            <img src="/projetmicrotrottoirimgsection1.jpg" alt="Interview 1" class="w-full h-full object-cover" loading="lazy" />
+                            <img src="/projetmicrotrottoirimgsection1.jpg" alt="Interview 1" class="w-full h-full object-cover" />
                         </div>
                         <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
-                            <img src="/projetmicrotrottoirimgsection2.jpg" alt="Interview 2" class="w-full h-full object-cover" loading="lazy" />
+                            <img src="/projetmicrotrottoirimgsection2.jpg" alt="Interview 2" class="w-full h-full object-cover" />
                         </div>
                         <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
-                            <img src="/projetmicrotrottoirimgsection3.jpg" alt="Interview 3" class="w-full h-full object-cover" loading="lazy" />
+                            <img src="/projetmicrotrottoirimgsection3.jpg" alt="Interview 3" class="w-full h-full object-cover" />
                         </div>
                         <div class="aspect-square rounded-xl overflow-hidden shadow-lg">
-                            <img src="/projetmicrotrottoirimgsection4.jpg" alt="Interview 4" class="w-full h-full object-cover" loading="lazy" />
+                            <img src="/projetmicrotrottoirimgsection4.jpg" alt="Interview 4" class="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>
@@ -145,7 +147,7 @@ import Favicons from '../components/Favicons.astro';
                 <div class="order-2 md:order-1 relative">
                     <!-- Image chef de projet -->
                     <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="/rolepagemicrotrottoir.png" alt="Chef de projet en action" class="w-full h-full object-cover" loading="lazy" />
+                        <img src="/rolepagemicrotrottoir.png" alt="Chef de projet en action" class="w-full h-full object-cover" />
                     </div>
                 </div>
                 <div class="order-1 md:order-2">

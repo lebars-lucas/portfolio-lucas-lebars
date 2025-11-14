@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Favicons from '../components/Favicons.astro';
+import PageLoader from '../components/PageLoader.astro';
+import LazyLoad from '../components/LazyLoad.astro';
 ---
 
 <!DOCTYPE html>
@@ -18,6 +20,8 @@ import Favicons from '../components/Favicons.astro';
         <Favicons />
 </head>
 <body>
+    <PageLoader />
+    <LazyLoad />
     <Header />
 
     <!-- Hero Section -->
@@ -93,7 +97,7 @@ import Favicons from '../components/Favicons.astro';
                 <div class="relative">
                     <div class="relative aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-forest-main to-moss">
                         <!-- Votre photo perso (remplissez le src) -->
-                        <img src="/photo-pro.jpg" alt="Photo de Lucas Lebars" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.style.display='none'" />
+                        <img src="/photo-pro.jpg" alt="Photo de Lucas Lebars" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" />
                         <div class="w-full h-full flex items-center justify-center text-white">
                         </div>
                     </div>
@@ -120,7 +124,7 @@ import Favicons from '../components/Favicons.astro';
             <div class="grid grid-cols-3 gap-4">
                 <!-- Row 1 -->
                 <div class="col-span-2 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[350px]">
-                    <img src="/img9.png" alt="Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img9.png" alt="Photo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -134,7 +138,7 @@ import Favicons from '../components/Favicons.astro';
                     </div>
                 </div>
                 <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[350px]">
-                    <img src="/img6.png" alt="Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img6.png" alt="Photo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -150,7 +154,7 @@ import Favicons from '../components/Favicons.astro';
 
                 <!-- Row 2 -->
                 <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[280px]">
-                    <img src="/img8.png" alt="Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img8.png" alt="Photo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -164,7 +168,7 @@ import Favicons from '../components/Favicons.astro';
                     </div>
                 </div>
                 <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[280px]">
-                    <img src="/img7.png" alt="Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img7.png" alt="Photo 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -178,7 +182,7 @@ import Favicons from '../components/Favicons.astro';
                     </div>
                 </div>
                 <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[280px]">
-                    <img src="/img5.png" alt="Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img5.png" alt="Photo 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -194,7 +198,7 @@ import Favicons from '../components/Favicons.astro';
 
                 <!-- Row 3 -->
                 <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[320px]">
-                    <img src="/img4.png" alt="Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img4.png" alt="Photo 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -208,7 +212,7 @@ import Favicons from '../components/Favicons.astro';
                     </div>
                 </div>
                 <div class="col-span-2 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[320px]">
-                    <img src="/img3.png" alt="Photo 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img3.png" alt="Photo 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -224,7 +228,7 @@ import Favicons from '../components/Favicons.astro';
 
                 <!-- Row 4 -->
                 <div class="col-span-2 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[290px]">
-                    <img src="/img2.png" alt="Photo 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img2.png" alt="Photo 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -238,7 +242,7 @@ import Favicons from '../components/Favicons.astro';
                     </div>
                 </div>
                 <div class="col-span-1 relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-[290px]">
-                    <img src="/img1.png" alt="Photo 9" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <img src="/img1.png" alt="Photo 9" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <div class="flex items-center gap-2 mb-1">
@@ -357,7 +361,7 @@ import Favicons from '../components/Favicons.astro';
                             <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-forest-main to-moss">
                                 <!-- Zone image (remplissez le src) -->
                                 <div class="absolute inset-0">
-                                    <img src="/img-reportage-montbe.png" alt="Micro-trottoir à Montbéliard" class="w-full h-full object-cover" loading="lazy" />
+                                    <img src="/img-reportage-montbe.png" alt="Micro-trottoir à Montbéliard" class="w-full h-full object-cover" />
                                 </div>
                                 <!-- Placeholder conservé -->
                                 <div class="w-full h-full flex items-center justify-center text-white">
@@ -377,7 +381,7 @@ import Favicons from '../components/Favicons.astro';
                             <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-moss to-sage">
                                 <!-- Zone image (remplissez le src) -->
                                 <div class="absolute inset-0">
-                                    <img src="/img-souvenirsilence.png" alt="Les souvenirs en silence" class="w-full h-full object-cover" loading="lazy" />
+                                    <img src="/img-souvenirsilence.png" alt="Les souvenirs en silence" class="w-full h-full object-cover" />
                                 </div>
                             </div>
                         </div>
@@ -427,7 +431,7 @@ import Favicons from '../components/Favicons.astro';
                             <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-sage to-mint">
                                 <!-- Zone image (remplissez le src) -->
                                 <div class="absolute inset-0">
-                                    <img src="/img-sae201202.png" alt="SAE 201/202" class="w-full h-full object-cover" loading="lazy" />
+                                    <img src="/img-sae201202.png" alt="SAE 201/202" class="w-full h-full object-cover" />
                                 </div>
                             </div>
                         </div>

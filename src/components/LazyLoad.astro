@@ -1,0 +1,56 @@
+---
+// Lazy Loading Component pour les images
+---
+
+<script>
+    // Lazy loading avec Intersection Observer
+    document.addEventListener('DOMContentLoaded', () => {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target as HTMLImageElement;
+                    
+                    // Charger l'image
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                    
+                    // Animation de fade-in
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease-in-out';
+                    
+                    img.onload = () => {
+                        img.style.opacity = '1';
+                        img.classList.add('loaded');
+                    };
+                    
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px', // Charger 50px avant que l'image soit visible
+            threshold: 0.01
+        });
+
+        // Observer toutes les images avec data-src
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        lazyImages.forEach(img => imageObserver.observe(img));
+
+        // Observer aussi les images avec pour l'effet fade-in
+        const lazyLoadImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyLoadImages.forEach(img => {
+            const image = img as HTMLImageElement;
+            image.style.opacity = '0';
+            image.style.transition = 'opacity 0.5s ease-in-out';
+            
+            if (image.complete) {
+                image.style.opacity = '1';
+            } else {
+                image.onload = () => {
+                    image.style.opacity = '1';
+                };
+            }
+        });
+    });
+</script>

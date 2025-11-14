@@ -1,0 +1,145 @@
+---
+// Page Loader Component
+---
+
+<!-- Page Loader avec effet 3D -->
+<div id="pageLoader" class="fixed inset-0 z-[9999] pointer-events-none">
+    <!-- Overlay qui apparaît instantanément -->
+    <div id="loaderOverlay" class="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest-deep to-forest-dark opacity-0 transition-opacity duration-200">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center transform perspective-1000">
+                <!-- Logo animé avec effet 3D -->
+                <div class="mb-12 animate-[float_2s_ease-in-out_infinite] transform-gpu" style="transform-style: preserve-3d;">
+                    <img src="/logo.svg" alt="Logo" class="w-32 h-20 mx-auto opacity-90" />
+                </div>
+                
+                <!-- Barre de chargement moderne -->
+                <div class="relative w-[200px] mx-auto">
+                    <div class="loader-bar h-1 rounded-full overflow-hidden bg-mint/20 shadow-lg">
+                        <div class="loader-progress"></div>
+                    </div>
+                </div>
+                
+                <!-- Texte de chargement -->
+                <p class="mt-8 text-mint-light font-medium text-xs tracking-[0.3em] uppercase opacity-70">Chargement</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const loader = document.getElementById('pageLoader');
+    const overlay = document.getElementById('loaderOverlay');
+    let isNavigating = false;
+    
+    // Pages principales uniquement
+    const mainPages = ['/', '/projets', '/contact', '/index'];
+    
+    function isMainPage(url) {
+        const path = new URL(url).pathname;
+        return mainPages.some(page => path === page || path === page + '.html');
+    }
+    
+    // Fonction pour afficher le loader instantanément
+    function showLoader() {
+        if (loader && overlay && !isNavigating) {
+            isNavigating = true;
+            // Activer le loader immédiatement
+            loader.classList.remove('pointer-events-none');
+            overlay.classList.remove('opacity-0');
+            overlay.classList.add('opacity-100');
+        }
+    }
+    
+    // Fonction pour cacher le loader avec animation 3D fluide
+    function hideLoader() {
+        if (loader && overlay) {
+            setTimeout(() => {
+                // Animation de sortie 3D
+                overlay.style.transform = 'perspective(1000px) rotateY(90deg)';
+                overlay.style.transformOrigin = 'left center';
+                overlay.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.8s ease-out';
+                overlay.classList.add('opacity-0');
+                
+                setTimeout(() => {
+                    loader.classList.add('pointer-events-none');
+                    overlay.style.transform = '';
+                    overlay.style.transformOrigin = '';
+                    isNavigating = false;
+                }, 800);
+            }, 200);
+        }
+    }
+    
+    // Attendre que la page soit ENTIÈREMENT chargée (images, CSS, etc.)
+    window.addEventListener('load', () => {
+        hideLoader();
+    });
+
+    // Intercepter uniquement les clics vers les pages principales
+    document.addEventListener('click', (e) => {
+        const target = (e.target as HTMLElement).closest('a');
+        if (target && target instanceof HTMLAnchorElement && target.href) {
+            const targetUrl = target.href;
+            const isExternal = target.target === '_blank' || !targetUrl.startsWith(window.location.origin);
+            const isAnchor = targetUrl.includes('#');
+            
+            // Afficher le loader uniquement pour les pages principales internes
+            if (!isExternal && !isAnchor && isMainPage(targetUrl)) {
+                showLoader();
+            }
+        }
+    });
+
+    // Support pour la navigation navigateur
+    window.addEventListener('beforeunload', (e) => {
+        if (isMainPage(window.location.href)) {
+            showLoader();
+        }
+    });
+    
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted) {
+            hideLoader();
+        }
+    });
+</script>
+
+<style>
+    @keyframes float {
+        0%, 100% { 
+            transform: translateY(0px) translateZ(0);
+        }
+        50% { 
+            transform: translateY(-10px) translateZ(20px);
+        }
+    }
+
+    .loader-progress {
+        height: 100%;
+        width: 100%;
+        background: 
+            linear-gradient(90deg, #6b9e78 0%, #6b9e78 100%) no-repeat,
+            linear-gradient(90deg, #6b9e78 0%, #6b9e78 100%) no-repeat,
+            #4a7c59;
+        background-size: 60% 100%, 60% 100%;
+        animation: loaderSlide 2s infinite ease-in-out;
+        box-shadow: 0 0 10px rgba(107, 158, 120, 0.5);
+    }
+
+    @keyframes loaderSlide {
+        0% {
+            background-position: -150% 0, -150% 0;
+        }
+        66% {
+            background-position: 250% 0, -150% 0;
+        }
+        100% {
+            background-position: 250% 0, 250% 0;
+        }
+    }
+
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+</style>
