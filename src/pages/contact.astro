@@ -252,7 +252,8 @@ import LazyLoad from '../components/LazyLoad.astro';
     <Footer />
 
     <script>
-        const POCKETBASE_URL = 'http://127.0.0.1:8090';
+        import { PB_URL } from '../lib/pocketbase';
+        const POCKETBASE_URL = PB_URL;
         const form = document.getElementById('contactForm') as HTMLFormElement | null;
         const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement | null;
         const formMessage = document.getElementById('formMessage') as HTMLDivElement | null;
