@@ -253,21 +253,25 @@ import LazyLoad from '../components/LazyLoad.astro';
 
     <script>
         const POCKETBASE_URL = 'http://127.0.0.1:8090';
-        const form = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const formMessage = document.getElementById('formMessage');
+        const form = document.getElementById('contactForm') as HTMLFormElement | null;
+        const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement | null;
+        const formMessage = document.getElementById('formMessage') as HTMLDivElement | null;
 
+        if (!form || !submitBtn || !formMessage) {
+            console.error('Form elements not found');
+        } else {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             submitBtn.disabled = true;
-            submitBtn.querySelector('span.relative').textContent = 'Envoi en cours...';
+            const contentSpan = submitBtn.querySelector('span.relative') as HTMLSpanElement | null;
+            if (contentSpan) contentSpan.textContent = 'Envoi en cours...';
             
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
+                name: (document.getElementById('name') as HTMLInputElement | null)?.value || '',
+                email: (document.getElementById('email') as HTMLInputElement | null)?.value || '',
+                subject: (document.getElementById('subject') as HTMLInputElement | null)?.value || '',
+                message: (document.getElementById('message') as HTMLTextAreaElement | null)?.value || ''
             };
 
             try {
@@ -293,7 +297,7 @@ import LazyLoad from '../components/LazyLoad.astro';
                 console.error('Erreur:', error);
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.querySelector('span.relative').innerHTML = `
+                if (contentSpan) contentSpan.innerHTML = `
                     <svg class="w-6 h-6 group-hover/btn:scale-110 group-hover/btn:-rotate-12 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
@@ -304,6 +308,7 @@ import LazyLoad from '../components/LazyLoad.astro';
                 `;
             }
         });
+        }
     </script>
 </body>
 </html>
