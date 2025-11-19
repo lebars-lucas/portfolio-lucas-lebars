@@ -1,4 +1,4 @@
-name: Build and Deploy to VPS
+name: Deploy Portfolio
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -20,25 +19,27 @@ jobs:
 
     - name: Install dependencies
       run: npm ci
-      
+
     - name: Build project
       run: |
         npm run build
         cp package.json dist/server/
-    - name: Deploy to VPS via SCP
-      uses: appleboy/scp-action@v0.1.3
+
+    # ÉTAPE 1 : On copie dans un dossier temporaire "chez toi" (Safe Zone)
+    - name: Upload to Temp Folder
+      uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22037
         source: "dist/*"
-        target: "/var/www/portfolio"
+        target: "/home/etudiant/deploy_cache"
         strip_components: 1
-        rm: false
-        overwrite: true
-        debug: true
-    - name: Install production dependencies on VPS
+        rm: true
+
+    # ÉTAPE 2 : On déplace les fichiers au bon endroit et on lance
+    - name: Move & Restart on VPS
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.HOST }}
@@ -46,8 +47,16 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22037
         script: |
+          # 1. On vide le dossier final (pour être propre)
+          rm -rf /var/www/portfolio/*
+          
+          # 2. On déplace les fichiers du dossier temporaire vers le dossier final
+          cp -r /home/etudiant/deploy_cache/* /var/www/portfolio/
+          
+          # 3. On nettoie le dossier temporaire
+          rm -rf /home/etudiant/deploy_cache
+          
+          # 4. Installation et lancement
           cd /var/www/portfolio/server
-          npm ci
-          npm install astro
-          npm install send server-destroy
+          npm install
           PORT=8085 pm2 restart portfolio || PORT=8085 pm2 start entry.mjs --name portfolio
