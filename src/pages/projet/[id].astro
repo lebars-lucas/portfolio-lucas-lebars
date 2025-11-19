@@ -1,0 +1,193 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+import Favicons from '../../components/Favicons.astro';
+import PageLoader from '../../components/PageLoader.astro';
+
+const POCKETBASE_URL = 'http://127.0.0.1:8090';
+const { id } = Astro.params;
+
+let project = null;
+let error = null;
+
+try {
+    const response = await fetch(`${POCKETBASE_URL}/api/collections/projets/records/${id}`);
+    if (response.ok) {
+        project = await response.json();
+    } else {
+        error = "Projet non trouvé";
+    }
+} catch (e) {
+    error = "Erreur de connexion à la base de données";
+}
+
+// Si le projet n'existe pas, rediriger vers la page projets
+if (!project) {
+    return Astro.redirect('/projets');
+}
+
+// Construire l'URL complète de l'image hero
+const heroImageUrl = project.hero_image 
+    ? `${POCKETBASE_URL}/api/files/${project.collectionId}/${project.id}/${project.hero_image}`
+    : '/jungle.jpg';
+
+// Construire les URLs des images de la galerie
+const galleryImages = project.gallery_images 
+    ? project.gallery_images.map((img: string) => 
+        `${POCKETBASE_URL}/api/files/${project.collectionId}/${project.id}/${img}`
+      )
+    : [];
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{project.title} - Lucas Lebars</title>
+    <meta name="description" content={project.short_description}>
+    <Favicons />
+</head>
+<body class="font-sans bg-white text-forest-dark">
+    <PageLoader />
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src={heroImageUrl} alt={project.title} class="w-full h-full object-cover brightness-75" />
+            <div class="absolute inset-0 bg-gradient-to-br from-forest-dark/80 via-forest-deep/70 to-forest-dark/80"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <span class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 text-white bg-white/10 backdrop-blur-sm border border-white/20">
+                {project.category}
+            </span>
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-2xl" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5)">
+                {project.title}
+            </h1>
+            <p class="text-xl md:text-2xl text-cream/90 mb-8 max-w-3xl mx-auto drop-shadow-lg">
+                {project.short_description}
+            </p>
+            <div class="flex flex-wrap gap-2 justify-center">
+                {project.tags && project.tags.map((tag: string) => (
+                    <span class="px-4 py-2 rounded-full text-sm text-white bg-white/10 backdrop-blur-sm border border-white/20">
+                        {tag}
+                    </span>
+                ))}
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <svg class="w-8 h-8 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <!-- Context Section -->
+            {project.context && (
+                <div class="mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Contexte du projet
+                    </h2>
+                    <div class="prose prose-lg max-w-none text-mountain" set:html={project.context} />
+                </div>
+            )}
+
+            <!-- Objectives Section -->
+            {project.objectives && (
+                <div class="mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Objectifs
+                    </h2>
+                    <div class="prose prose-lg max-w-none text-mountain" set:html={project.objectives} />
+                </div>
+            )}
+
+            <!-- Process Section -->
+            {project.process && (
+                <div class="mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Processus de création
+                    </h2>
+                    <div class="prose prose-lg max-w-none text-mountain" set:html={project.process} />
+                </div>
+            )}
+
+            <!-- Gallery -->
+            {galleryImages.length > 0 && (
+                <div class="mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Galerie
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        {galleryImages.map((imgUrl: string, index: number) => (
+                            <div class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-forest-main to-moss">
+                                <img src={imgUrl} alt={`${project.title} - Image ${index + 1}`} class="w-full h-full object-cover" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            <!-- Role Section -->
+            {project.role && (
+                <div class="mb-16 bg-forest-main/5 rounded-2xl p-8">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Mon rôle
+                    </h2>
+                    <div class="prose prose-lg max-w-none text-mountain" set:html={project.role} />
+                </div>
+            )}
+
+            <!-- Results Section -->
+            {project.results && (
+                <div class="mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Résultats
+                    </h2>
+                    <div class="prose prose-lg max-w-none text-mountain" set:html={project.results} />
+                </div>
+            )}
+
+            <!-- Video Links -->
+            {project.video_links && project.video_links.length > 0 && (
+                <div class="mb-16">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 text-forest-dark">
+                        Vidéos
+                    </h2>
+                    <div class="flex flex-wrap gap-4">
+                        {project.video_links.map((video: {label: string, url: string}) => (
+                            <a href={video.url} target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white bg-forest-main hover:bg-moss transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                                </svg>
+                                {video.label}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            <!-- Back to Projects -->
+            <div class="text-center mt-16">
+                <a href="/projets" class="inline-flex items-center gap-2 font-semibold text-forest-main hover:gap-4 transition-all">
+                    <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    Retour aux projets
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</body>
+</html>
