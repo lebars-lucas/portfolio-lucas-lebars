@@ -22,12 +22,32 @@ import LazyLoad from '../components/LazyLoad.astro';
     <!-- Header -->
     <Header />
 
-    <!-- Hero Section with Jungle Background -->
+    <!-- Hero Section with minimalist illustration -->
     <section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-        <!-- Background image -->
+        <!-- Background illustration -->
         <div class="absolute inset-0 z-0">
-            <img src="/jungle.jpg" alt="Jungle background" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-br from-forest-dark/90 via-forest-deep/85 to-forest-dark/80"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest-deep to-moss"></div>
+            <div class="absolute inset-0 opacity-35" style="background: radial-gradient(circle at 70% 15%, rgba(168,213,186,0.35), transparent 45%), radial-gradient(circle at 30% 30%, rgba(74,124,89,0.3), transparent 55%), radial-gradient(circle at 60% 85%, rgba(168,213,186,0.22), transparent 50%);"></div>
+            <div class="absolute inset-0 pointer-events-none">
+                <svg viewBox="0 0 1200 600" class="w-full h-full" preserveAspectRatio="none" aria-hidden="true">
+                    <circle cx="980" cy="140" r="120" fill="rgba(168,213,186,0.18)" />
+                    <path d="M0 600 L0 360 L140 300 L320 360 L520 310 L700 360 L860 320 L1040 360 L1200 310 L1200 600 Z" fill="rgba(45,90,61,0.5)" />
+                    <path d="M0 600 L0 430 L180 400 L360 430 L520 410 L700 440 L900 400 L1080 430 L1200 420 L1200 600 Z" fill="rgba(74,124,89,0.4)" />
+                    <path d="M0 600 L0 520 L220 500 L420 520 L620 500 L820 520 L1030 500 L1200 520 L1200 600 Z" fill="rgba(107,158,120,0.3)" />
+                    <g fill="rgba(10,15,13,0.35)">
+                        <path d="M140 540 L180 450 L220 540 Z" />
+                        <path d="M200 560 L240 470 L280 560 Z" />
+                        <path d="M860 550 L900 460 L940 550 Z" />
+                        <path d="M940 560 L980 480 L1020 560 Z" />
+                    </g>
+                    <g fill="rgba(74,124,89,0.45)">
+                        <rect x="176" y="540" width="8" height="40" rx="2" />
+                        <rect x="236" y="560" width="8" height="30" rx="2" />
+                        <rect x="896" y="552" width="8" height="38" rx="2" />
+                        <rect x="976" y="562" width="8" height="30" rx="2" />
+                    </g>
+                </svg>
+            </div>
         </div>
 
         <!-- Hero content -->

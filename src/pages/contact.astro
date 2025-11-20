@@ -24,11 +24,23 @@ import LazyLoad from '../components/LazyLoad.astro';
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- Background image -->
+        <!-- Background illustration -->
         <div class="absolute inset-0">
-            <img src="/forest.jpg" alt="Forêt" class="w-full h-full object-cover" />
-            <!-- Dark green overlay matching homepage and footer colors - Deeper green -->
-            <div class="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest-dark to-forest-deep opacity-75"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest-deep to-forest-main"></div>
+            <div class="absolute inset-0 opacity-45" style="background: radial-gradient(circle at 12% 20%, rgba(168,213,186,0.35), transparent 45%), radial-gradient(circle at 85% 30%, rgba(74,124,89,0.35), transparent 55%), radial-gradient(circle at 55% 85%, rgba(107,158,120,0.3), transparent 50%);"></div>
+            <div class="absolute inset-0 pointer-events-none">
+                <svg viewBox="0 0 1200 600" class="w-full h-full" preserveAspectRatio="none" aria-hidden="true">
+                    <ellipse cx="220" cy="150" rx="210" ry="260" fill="rgba(168,213,186,0.18)" />
+                    <ellipse cx="980" cy="200" rx="190" ry="240" fill="rgba(74,124,89,0.18)" />
+                    <path d="M-80 520 C80 340 280 340 420 520 C280 560 80 560 -80 520Z" fill="rgba(45,90,61,0.5)" />
+                    <path d="M880 540 C1000 360 1150 360 1280 540 C1150 580 1000 580 880 540Z" fill="rgba(74,124,89,0.45)" />
+                    <path d="M200 470 C260 390 360 390 420 470 C360 500 260 500 200 470Z" fill="rgba(168,213,186,0.25)" />
+                    <path d="M720 500 C770 420 860 420 910 500 C860 530 770 530 720 500Z" fill="rgba(107,158,120,0.28)" />
+                    <path d="M0 600 C180 560 340 570 520 550 C700 530 880 560 1200 520 L1200 600 Z" fill="rgba(10,15,13,0.35)" />
+                    <path d="M150 520 Q220 460 300 520" stroke="rgba(168,213,186,0.3)" stroke-width="4" fill="none" stroke-linecap="round" />
+                    <path d="M950 520 Q1020 450 1100 520" stroke="rgba(168,213,186,0.25)" stroke-width="4" fill="none" stroke-linecap="round" />
+                </svg>
+            </div>
         </div>
 
         <!-- Animated background elements -->
